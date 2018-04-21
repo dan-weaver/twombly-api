@@ -1,4 +1,4 @@
-module.exports = {
+module.exports.default = {
   development: {
     client: "sqlite3",
     useNullAsDefault: true,
