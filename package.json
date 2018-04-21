@@ -25,7 +25,9 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
+    "@types/body-parser": "^1.16.8",
     "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "knex": "^0.14.6",
