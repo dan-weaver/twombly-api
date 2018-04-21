@@ -3,15 +3,20 @@ import * as fs from "fs";
 
 export function dropDatabase(): Promise<void> {
   return new Promise(function(res, rej) {
-    fs.unlink("./twombly.db", err => {
+    fs.unlink(__dirname + "/twombly.db", err => {
+      if (err) {
+        console.log(err);
+      }
       res();
     });
   });
 }
 
-export function seedDatabase(seedName: string) {}
-export function refreshDatabase() {
+export function seedDatabase() {
+  return knex.seed.run();
+}
+export function setupTestDb() {
   return dropDatabase().then(() => {
-    knex.migrate.latest();
+    return knex.migrate.latest();
   });
 }
