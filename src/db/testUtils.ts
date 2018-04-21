@@ -1,9 +1,13 @@
 import knex from "./";
+import knexfile from "../../knexfile";
 import * as fs from "fs";
 
 export function dropDatabase(): Promise<void> {
   return new Promise(function(res, rej) {
-    fs.unlink("./twombly.db", err => {
+    fs.unlink(__dirname + "/twombly.db", err => {
+      if (err) {
+        console.log(err);
+      }
       res();
     });
   });
@@ -12,6 +16,7 @@ export function dropDatabase(): Promise<void> {
 export function seedDatabase(seedName: string) {}
 export function refreshDatabase() {
   return dropDatabase().then(() => {
-    knex.migrate.latest();
+    console.log("dropped table");
+    return knex.migrate.latest();
   });
 }

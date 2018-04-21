@@ -1,7 +1,7 @@
 import * as Knex from "knex";
-import knexConfig from "../../knexfile";
 import * as Objection from "objection";
-const knex: Knex = Knex(knexConfig.development);
+import knexfile from "../../knexfile";
+const knex: Knex = Knex(knexfile.development);
 export default knex;
 
 Objection.Model.knex(knex);

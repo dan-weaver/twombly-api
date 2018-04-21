@@ -1,7 +1,10 @@
 import * as testUtils from "../../db/testUtils";
 import * as UserService from "../";
 describe("test", () => {
-  beforeEach(done => testUtils.refreshDatabase().then(done));
+  beforeEach(done =>
+    testUtils.refreshDatabase().then(() => {
+      done();
+    }));
   it("should work", done => {
     UserService.createUser({
       first_name: "Dan",
