@@ -1,5 +1,4 @@
 import knex from "./";
-import knexfile from "../../knexfile";
 import * as fs from "fs";
 
 export function dropDatabase(): Promise<void> {

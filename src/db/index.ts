@@ -1,6 +1,6 @@
 import * as Knex from "knex";
 import * as Objection from "objection";
-import knexfile from "../../knexfile";
+import knexfile from "../../knexConfig";
 const knex: Knex = Knex(knexfile.development);
 export default knex;
 
