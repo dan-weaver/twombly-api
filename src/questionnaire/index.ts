@@ -7,6 +7,10 @@ export async function getQuestionnaire(
   return qs[0];
 }
 
+export async function getQuestionnaires(): Promise<Questionnaire[]> {
+  return await Questionnaire.query();
+}
+
 export async function createQuestionnaire(
   name: string
 ): Promise<Questionnaire> {
