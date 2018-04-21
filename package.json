@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "concurrently \"gulp\" \"nodemon dist\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.11.1",
+    "@types/jest": "^22.2.3",
     "@types/knex": "^0.14.12",
     "gulp": "^3.9.1",
     "gulp-typescript": "^4.0.2",
+    "jest": "^22.4.3",
     "sqlite3": "^4.0.0",
+    "ts-jest": "^22.4.4",
     "typescript": "^2.8.3"
   },
   "dependencies": {
