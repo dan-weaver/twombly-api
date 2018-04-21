@@ -13,3 +13,11 @@ export function createUser(user: PartialUser) {
 export function getAllUsers() {
   return UserModels.User.query();
 }
+
+export function getUser(id: number): Promise<UserModels.User> | undefined {
+  return UserModels.User.query()
+    .where("id", "=", id)
+    .then(res => {
+      return res[0];
+    });
+}

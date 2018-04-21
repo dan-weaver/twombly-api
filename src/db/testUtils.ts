@@ -12,10 +12,11 @@ export function dropDatabase(): Promise<void> {
   });
 }
 
-export function seedDatabase(seedName: string) {}
-export function refreshDatabase() {
+export function seedDatabase() {
+  return knex.seed.run();
+}
+export function setupTestDb() {
   return dropDatabase().then(() => {
-    console.log("dropped table");
     return knex.migrate.latest();
   });
 }
